@@ -8,6 +8,12 @@ var con = mysql.createConnection({
   password: "BOTmania2018$$$",
   database: "botviraldev01"
 });
+/*var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "botviraldev01"
+});*/
 // Create the database connection once, reuse later
 con.connect(function(err) {
   if (err) throw err;
@@ -36,7 +42,7 @@ app.get('/share', function(req, res) {
 
 app.get('/view', function (req, res) {
   // Get all the shares registerd for a specific customer
-  var sql ="SELECT * FROM sharecount WHERE custid = " + req.query.cid
+  var sql ="SELECT * FROM refcount WHERE custid = " + req.query.cid
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log(result);
