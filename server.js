@@ -3,10 +3,10 @@ var app = express();
 var port = process.env.PORT || 3000;
 var mysql = require('mysql');
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "botviral"
+  host: "devbotviral.cwpwpxalycf5.eu-west-1.rds.amazonaws.com",
+  user: "botviraladmin",
+  password: "BOTmania2018$$$",
+  database: "botviraldev01"
 });
 // Create the database connection once, reuse later
 con.connect(function(err) {
