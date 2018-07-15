@@ -16,13 +16,13 @@ con.connect(function(err) {
 // Read the url arguements
 app.get('/share', function(req, res) {
 // Register the share has led to a CTA
-    var sql = "INSERT INTO shares (campaignid, user, shares) VALUES (" + req.query.cpn + " ," + req.query.usr + ", 1)";
+    var sql = "INSERT INTO referrals (campaignid, user, referrals) VALUES (" + req.query.cpn + " ," + req.query.usr + ", 1)";
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log ("1 record inserted");
     });
 // Get the url from the campaign
-    var sql = "select url from campaign where id = " + req.query.cpn;
+    var sql = "SELECT url FROM campaign WHERE id = " + req.query.cpn;
     con.query(sql, function (err, result, fields) {
       if (err) throw err;
       Object.keys(result).forEach(function(key) {
